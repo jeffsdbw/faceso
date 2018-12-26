@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c4a4d95-a07e-42f7-ab4c-01f305906b03" name="Default" comment="" />
+    <list default="true" id="7c4a4d95-a07e-42f7-ab4c-01f305906b03" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen.dart" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -35,8 +37,8 @@
       <file leaf-file-name="login_screen.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/screens/login_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="186">
+              <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -58,6 +60,9 @@
         <option value="Dart File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -210,8 +215,8 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5060514" side_tool="true" weight="0.3256579" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" sideWeight="0.5045386" side_tool="true" weight="0.35958904" />
       <window_info anchor="bottom" id="Dart Analysis" order="14" sideWeight="0.49924356" weight="0.32933104" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40582192" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" sideWeight="0.49092284" weight="0.32894737" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49092284" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40582192" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.48789713" weight="0.32876712" />
       <window_info anchor="right" id="Flutter Outline" order="9" weight="0.32980332" />
       <window_info anchor="bottom" id="Logcat" order="12" sideWeight="0.49546143" weight="0.35958904" />
@@ -222,8 +227,8 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989726" />
       <window_info anchor="right" id="Flutter Inspector" order="9" weight="0.32980332" />
       <window_info anchor="right" id="Preview" order="8" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="6" />
@@ -587,8 +592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/screens/login_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="186">
+          <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
         </state>
       </provider>
     </entry>
