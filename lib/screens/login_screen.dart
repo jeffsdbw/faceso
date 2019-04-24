@@ -80,14 +80,15 @@ Widget _buildInfo(BuildContext context, String status, String line1,
           'checkLogin.php?user=' +
           ctrUsername.text +
           '&password=' +
-          ctrPassword.text,
+          ctrPassword.text +
+          '&appid=FACESO',
     );
 
     if (response.statusCode == 200) {
       var jsonResponse = json.decode(response.body);
-      if (jsonResponse['StatusID'] == '1') {
+      if (jsonResponse['results']['status'] == '0') {
         String userID = ctrUsername.text;
-        String userName = jsonResponse['UserName'];
+        String userName = jsonResponse['results']['name'];
         final prefs = await SharedPreferences.getInstance();
         prefs.setString('userID', userID);
         prefs.setString('userName', userName);
@@ -96,7 +97,7 @@ Widget _buildInfo(BuildContext context, String status, String line1,
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
       } else {
         //print(jsonResponse['Error']);
-        String vMsg = jsonResponse['Error'];
+        String vMsg = jsonResponse['results']['message'];
         showDialog<Null>(
             context: context,
             builder: (BuildContext context) {

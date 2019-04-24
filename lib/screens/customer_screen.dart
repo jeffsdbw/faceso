@@ -1,8 +1,8 @@
+import 'package:faceso/screens/customer_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
-import 'package:sticky_headers/sticky_headers.dart';
 
 class CustomerScreen extends StatefulWidget {
   @override
@@ -12,9 +12,13 @@ class CustomerScreen extends StatefulWidget {
 class _CustomerScreenState extends State<CustomerScreen> {
   var customers;
   bool isLoading = true;
+  TextEditingController ctrSearch = TextEditingController();
 
   Future<Null> getCustomers() async {
-    final response = await http.get('https://randomuser.me/api/?results=20');
+    //final response = await http.get('https://randomuser.me/api/?results=20');
+    final response = await http.get(
+        'http://dsmservice.mistine.co.th/bsmart/faceso/getCustomer.php?search=' +
+            ctrSearch.text);
 
     if (response.statusCode == 200) {
       var jsonResponse = json.decode(response.body);
@@ -37,7 +41,6 @@ class _CustomerScreenState extends State<CustomerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController ctrSearch = TextEditingController();
     FocusNode _searchFocus = new FocusNode();
     return new Column(children: <Widget>[
       Container(
@@ -120,19 +123,47 @@ class _CustomerScreenState extends State<CustomerScreen> {
                   child: ListView.builder(
                     physics: const AlwaysScrollableScrollPhysics(),
                     itemBuilder: (context, int index) {
+                      bool chkImg = false;
+                      if (customers[index]['image'] == null ||
+                          customers[index]['image'].isEmpty) {
+                        chkImg = false;
+                      } else {
+                        chkImg = true;
+                      }
                       return Column(
                         children: <Widget>[
                           ListTile(
-                            leading: CircleAvatar(
+                            leading: chkImg
+                                ? CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                    customers[index]['image'],
+                                  ))
+                                : Icon(
+                                    Icons.account_circle,
+                                    size: 50.0,
+                                  ),
+                            /*leading: CircleAvatar(
                               backgroundImage: NetworkImage(
-                                  customers[index]['picture']['medium']),
-                            ),
-                            onTap: () {},
+                                  //customers[index]['picture']['medium']),
+                                  'https://randomuser.me/api/portraits/med/women/6.jpg'),
+                            ),*/
+                            onTap: () {
+                              print('Customer:' + customers[index]['code']);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CustomerDetailScreen(
+                                              customers[index]['code'])));
+                            },
                             title: Text(
-                              '${customers[index]['name']['first']} ${customers[index]['name']['last']}',
+                              '${customers[index]['name']}',
                               style: TextStyle(fontSize: 20.0),
                             ),
-                            subtitle: Text('${customers[index]['email']}'),
+                            subtitle: Text(
+                              '${customers[index]['code']} \n${customers[index]['type']}',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
                             trailing: Icon(Icons.keyboard_arrow_right),
                           ),
                           Divider(),

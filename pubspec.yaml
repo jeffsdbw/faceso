@@ -17,7 +17,6 @@ dependencies:
   cloud_firestore:
   http:
   shared_preferences:
-  sticky_headers:
 
   flutter:
     sdk: flutter
