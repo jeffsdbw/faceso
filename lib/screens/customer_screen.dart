@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomerScreen extends StatefulWidget {
   @override
@@ -16,9 +17,10 @@ class _CustomerScreenState extends State<CustomerScreen> {
 
   Future<Null> getCustomers() async {
     //final response = await http.get('https://randomuser.me/api/?results=20');
-    final response = await http.get(
-        'http://dsmservice.mistine.co.th/bsmart/faceso/getCustomer.php?search=' +
-            ctrSearch.text);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String server = (prefs.getString('server') ?? 'Unknow Server');
+    final response = await http
+        .get(server + 'faceso/getCustomer.php?search=' + ctrSearch.text);
 
     if (response.statusCode == 200) {
       var jsonResponse = json.decode(response.body);

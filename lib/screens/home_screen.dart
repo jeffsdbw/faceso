@@ -177,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ListTile(
             leading: Icon(
-              Icons.attach_money,
+              Icons.monetization_on,
               color: Colors.pinkAccent,
             ),
             title: Text(
